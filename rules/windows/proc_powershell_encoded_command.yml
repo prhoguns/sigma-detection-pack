@@ -1,0 +1,28 @@
+title: PowerShell Encoded Command Execution
+id: 7c1f2a10-0001-4a5b-9c00-000000000001
+status: test
+description: PowerShell launched with an encoded command line, the standard way loaders hide their payload. Rare in legitimate administration.
+references:
+  - https://attack.mitre.org/techniques/T1059/001/
+author: Philips Rhoguns
+date: 2026-09-22
+tags:
+  - attack.execution
+  - attack.t1059.001
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    Image|endswith:
+      - '\powershell.exe'
+      - '\pwsh.exe'
+    CommandLine|contains:
+      - ' -enc '
+      - ' -EncodedCommand '
+      - ' -ec '
+      - ' -e '
+  condition: selection
+falsepositives:
+  - Some management tools (SCCM, Intune remediation scripts) use encoded commands; allowlist by ParentImage.
+level: high
