@@ -1,0 +1,25 @@
+title: User Account Created by Unexpected Account
+id: 7c1f2a10-0005-4a5b-9c00-000000000005
+status: test
+description: Security event 4720 where the creating account is not the provisioning service account or the HR automation.
+references:
+  - https://attack.mitre.org/techniques/T1136/001/
+author: Philips Rhoguns
+date: 2026-09-22
+tags:
+  - attack.persistence
+  - attack.t1136.001
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4720
+  filter_provisioning:
+    SubjectUserName:
+      - 'svc-provision'
+      - 'svc-hr-sync'
+  condition: selection and not filter_provisioning
+falsepositives:
+  - Help desk creating accounts manually; tune the filter to your provisioning process.
+level: medium

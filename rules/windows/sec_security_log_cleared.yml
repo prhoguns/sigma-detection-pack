@@ -1,0 +1,21 @@
+title: Security Event Log Cleared
+id: 7c1f2a10-0008-4a5b-9c00-000000000008
+status: test
+description: Event 1102, the audit log was cleared. Almost always defense evasion when not during a planned rebuild.
+references:
+  - https://attack.mitre.org/techniques/T1070/001/
+author: Philips Rhoguns
+date: 2026-09-22
+tags:
+  - attack.defense-evasion
+  - attack.t1070.001
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 1102
+  condition: selection
+falsepositives:
+  - Planned host rebuilds
+level: high

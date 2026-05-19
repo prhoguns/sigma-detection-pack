@@ -1,0 +1,29 @@
+title: User Added to Privileged Group
+id: 7c1f2a10-0004-4a5b-9c00-000000000004
+status: test
+description: Security event 4728/4732 adding a member to Domain Admins, Administrators or Enterprise Admins.
+references:
+  - https://attack.mitre.org/techniques/T1098/
+author: Philips Rhoguns
+date: 2026-09-22
+tags:
+  - attack.privilege-escalation
+  - attack.persistence
+  - attack.t1098
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID:
+      - 4728
+      - 4732
+      - 4756
+    TargetUserName:
+      - 'Domain Admins'
+      - 'Administrators'
+      - 'Enterprise Admins'
+  condition: selection
+falsepositives:
+  - Legitimate administration; correlate with a change ticket.
+level: high

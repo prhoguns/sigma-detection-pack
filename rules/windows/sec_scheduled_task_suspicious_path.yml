@@ -1,0 +1,26 @@
+title: Scheduled Task Created Running From User-Writable Path
+id: 7c1f2a10-0006-4a5b-9c00-000000000006
+status: test
+description: Security event 4698 whose task action points into Temp, AppData, ProgramData or Public folders - where malware stages itself.
+references:
+  - https://attack.mitre.org/techniques/T1053/005/
+author: Philips Rhoguns
+date: 2026-09-22
+tags:
+  - attack.persistence
+  - attack.t1053.005
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4698
+    TaskContent|contains:
+      - '\AppData\'
+      - '\Temp\'
+      - '\ProgramData\'
+      - '\Users\Public\'
+  condition: selection
+falsepositives:
+  - Software updaters that install per-user (Chrome, Teams) create tasks in AppData; allowlist by TaskName.
+level: medium
