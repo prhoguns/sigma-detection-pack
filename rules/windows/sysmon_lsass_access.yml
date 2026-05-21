@@ -1,0 +1,29 @@
+title: LSASS Memory Access by Non-System Process
+id: 7c1f2a10-0003-4a5b-9c00-000000000003
+status: test
+description: Sysmon event 10 where a process opens lsass.exe with read/full access, excluding known legitimate callers. Credential dumping precursor.
+references:
+  - https://attack.mitre.org/techniques/T1003/001/
+author: Philips Rhoguns
+date: 2026-09-22
+tags:
+  - attack.credential-access
+  - attack.t1003.001
+logsource:
+  product: windows
+  category: process_access
+detection:
+  selection:
+    TargetImage|endswith: '\lsass.exe'
+    GrantedAccess:
+      - '0x1010'
+      - '0x1410'
+      - '0x1fffff'
+  filter_legit:
+    SourceImage|startswith:
+      - 'C:\Windows\System32\'
+      - 'C:\Program Files\Windows Defender\'
+  condition: selection and not filter_legit
+falsepositives:
+  - EDR agents and backup software; add their SourceImage to the filter.
+level: high

@@ -1,0 +1,24 @@
+title: Windows Defender Disabled via Registry
+id: 7c1f2a10-0009-4a5b-9c00-000000000009
+status: test
+description: Sysmon event 13 setting DisableAntiSpyware or DisableRealtimeMonitoring to 1.
+references:
+  - https://attack.mitre.org/techniques/T1562/001/
+author: Philips Rhoguns
+date: 2026-09-22
+tags:
+  - attack.defense-evasion
+  - attack.t1562.001
+logsource:
+  product: windows
+  category: registry_set
+detection:
+  selection:
+    TargetObject|contains:
+      - '\Windows Defender\DisableAntiSpyware'
+      - '\Real-Time Protection\DisableRealtimeMonitoring'
+    Details: 'DWORD (0x00000001)'
+  condition: selection
+falsepositives:
+  - Group Policy on servers where Defender is intentionally replaced by another EDR
+level: high

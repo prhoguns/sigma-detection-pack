@@ -1,0 +1,25 @@
+title: Cobalt Strike Default Named Pipe
+id: 7c1f2a10-0007-4a5b-9c00-000000000007
+status: test
+description: Sysmon event 17/18 with a named pipe matching Cobalt Strike defaults.
+references:
+  - https://attack.mitre.org/techniques/T1071/
+author: Philips Rhoguns
+date: 2026-09-22
+tags:
+  - attack.command-and-control
+  - attack.t1071
+logsource:
+  product: windows
+  category: pipe_created
+detection:
+  selection:
+    PipeName|startswith:
+      - '\msagent_'
+      - '\MSSE-'
+      - '\postex_'
+      - '\mojo.5688.8052.'
+  condition: selection
+falsepositives:
+  - Unlikely
+level: critical
