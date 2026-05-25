@@ -1,0 +1,1 @@
+TargetObject IN ("*\\Windows Defender\\DisableAntiSpyware*", "*\\Real-Time Protection\\DisableRealtimeMonitoring*") Details="DWORD (0x00000001)"

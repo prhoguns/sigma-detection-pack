@@ -1,0 +1,2 @@
+imProcessCreate
+| where TargetProcessCommandLine contains "sekurlsa::" or TargetProcessCommandLine contains "lsadump::" or TargetProcessCommandLine contains "privilege::debug" or TargetProcessCommandLine contains "kerberos::golden"

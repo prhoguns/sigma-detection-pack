@@ -1,0 +1,1 @@
+SELECT * FROM events WHERE PipeName LIKE '\\msagent\_%' ESCAPE '\' OR PipeName LIKE '\\MSSE-%' ESCAPE '\' OR PipeName LIKE '\\postex\_%' ESCAPE '\' OR PipeName LIKE '\\mojo.5688.8052.%' ESCAPE '\'

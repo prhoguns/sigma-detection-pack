@@ -1,0 +1,2 @@
+imRegistry
+| where (RegistryKey contains "\\Windows Defender\\DisableAntiSpyware" or RegistryKey contains "\\Real-Time Protection\\DisableRealtimeMonitoring") and RegistryValueData =~ "DWORD (0x00000001)"

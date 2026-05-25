@@ -1,0 +1,1 @@
+CommandLine IN ("*sekurlsa::*", "*lsadump::*", "*privilege::debug*", "*kerberos::golden*")

@@ -1,0 +1,2 @@
+-- not converted: Invalid SigmaDetectionItem field name encountered: PipeName. Please use valid fields for the Event table, or the following fields that have fieldmappings in this pipeline:
+AzureDeploymentID, Computer, EventCategory, EventData, EventID, EventLevel, EventLevelName, EventLog, Hashes, ManagementGroupName, Message, ParameterXml, RenderedDescription, Role, Source, SourceSystem, TimeGenerated, Type, UserName, _BilledSize, _IsBillable, _ResourceId, _SubscriptionId

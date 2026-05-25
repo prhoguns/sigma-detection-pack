@@ -1,0 +1,1 @@
+SELECT * FROM events WHERE (TargetObject LIKE '%\\Windows Defender\\DisableAntiSpyware%' ESCAPE '\' OR TargetObject LIKE '%\\Real-Time Protection\\DisableRealtimeMonitoring%' ESCAPE '\') AND Details='DWORD (0x00000001)'

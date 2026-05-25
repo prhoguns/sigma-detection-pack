@@ -1,0 +1,1 @@
+SELECT * FROM events WHERE CommandLine LIKE '%sekurlsa::%' ESCAPE '\' OR CommandLine LIKE '%lsadump::%' ESCAPE '\' OR CommandLine LIKE '%privilege::debug%' ESCAPE '\' OR CommandLine LIKE '%kerberos::golden%' ESCAPE '\'

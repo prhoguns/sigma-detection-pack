@@ -1,0 +1,1 @@
+SELECT * FROM events WHERE (TargetImage LIKE '%\\lsass.exe' ESCAPE '\' AND (GrantedAccess='0x1010' OR GrantedAccess='0x1410' OR GrantedAccess='0x1fffff')) AND (NOT (SourceImage LIKE 'C:\\Windows\\System32\\%' ESCAPE '\' OR SourceImage LIKE 'C:\\Program Files\\Windows Defender\\%' ESCAPE '\'))

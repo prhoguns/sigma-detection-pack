@@ -1,0 +1,2 @@
+SecurityEvent
+| where (EventID in~ ("4728", "4732", "4756")) and (TargetUserName in~ ("Domain Admins", "Administrators", "Enterprise Admins"))

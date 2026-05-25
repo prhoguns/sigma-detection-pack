@@ -1,0 +1,1 @@
+SELECT * FROM events WHERE EventID=4720 AND (NOT (SubjectUserName='svc-provision' OR SubjectUserName='svc-hr-sync'))

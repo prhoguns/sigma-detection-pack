@@ -1,0 +1,1 @@
+SELECT * FROM events WHERE EventID=4698 AND (TaskContent LIKE '%\\AppData\\%' ESCAPE '\' OR TaskContent LIKE '%\\Temp\\%' ESCAPE '\' OR TaskContent LIKE '%\\ProgramData\\%' ESCAPE '\' OR TaskContent LIKE '%\\Users\\Public\\%' ESCAPE '\')

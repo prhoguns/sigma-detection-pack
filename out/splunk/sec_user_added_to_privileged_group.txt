@@ -1,0 +1,1 @@
+source="WinEventLog:Security" EventCode IN (4728, 4732, 4756) TargetUserName IN ("Domain Admins", "Administrators", "Enterprise Admins")

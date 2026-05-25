@@ -1,0 +1,1 @@
+SELECT * FROM events WHERE (EventID=4728 OR EventID=4732 OR EventID=4756) AND (TargetUserName='Domain Admins' OR TargetUserName='Administrators' OR TargetUserName='Enterprise Admins')

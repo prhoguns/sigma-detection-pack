@@ -1,0 +1,1 @@
+source="WinEventLog:Security" EventCode=4698 TaskContent IN ("*\\AppData\\*", "*\\Temp\\*", "*\\ProgramData\\*", "*\\Users\\Public\\*")
