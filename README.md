@@ -1,5 +1,7 @@
 # Sigma Detection Pack
 
+_Portfolio sprint timeline: January–September 2026. Reported results retain their actual run dates._
+
 Detection-as-code: eleven [Sigma](https://sigmahq.io) rules covering an intrusion chain from
 initial access to defense evasion, converted with pySigma to **SQL, Splunk SPL and Sentinel KQL**,
 and **tested in CI** against a synthetic event corpus with planted true positives and deliberate
