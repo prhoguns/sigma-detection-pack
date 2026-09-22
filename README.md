@@ -64,3 +64,7 @@ the alerts, this one defines the detections that would raise them.
 1. Write `rules/<os>/<name>.yml` (Sigma v2 format; keep `falsepositives` and ATT&CK tags).
 2. Add planted positives *and* near-misses in `scripts/generate_events.py`, listing the rule id on the positives.
 3. `python scripts/generate_events.py && python scripts/convert.py && pytest`.
+
+## Acknowledgments
+
+AI tools assisted with documentation and repository organization.
