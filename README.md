@@ -1,5 +1,9 @@
 # Sigma Detection Pack
 
+**Start here:** [Rules](rules/) · [Behaviour tests](tests/test_rules_fire.py) · [Portfolio case study](https://prhoguns.github.io/case-studies/sigma-detection-pack.html)
+
+**What I did:** I wrote eleven Sigma rules and tested their SQL conversions against 6,038 synthetic events, including planted positives and near-misses. The documented run passed twelve tests. SPL and supported KQL are generated outputs; five KQL conversions need Sentinel parser mappings and are not presented as deployable detections.
+
 _Portfolio sprint timeline: January–September 2026. Reported results retain their actual run dates._
 
 Detection-as-code: eleven [Sigma](https://sigmahq.io) rules covering an intrusion chain from
