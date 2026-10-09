@@ -14,6 +14,12 @@ updates:
     groups:
       pip:
         patterns: ["*"]
+    ignore:
+      # The Kusto and Splunk backends and sigma-cli still require pySigma < 2.
+      - dependency-name: "pysigma*"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "pySigma*"
+        update-types: ["version-update:semver-major"]
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
